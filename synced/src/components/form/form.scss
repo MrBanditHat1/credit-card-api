@@ -1,0 +1,393 @@
+.form{
+    grid-column: 9/12;
+    grid-row: 4/10;
+    display: grid;
+    grid-template-areas: 
+    'name name name'
+    'num  num  num'
+    'expc expc expc'
+    'btn  btn  btn'
+    ;
+
+    &__name{
+        grid-area: name;
+        margin-bottom: -1em;
+        &__title{
+            font-size: 1.2rem;
+            margin-bottom: 1em;
+            letter-spacing: .2rem;
+            color: #21092F;
+            font-family: 'Space Grotesk', sans-serif;
+
+        }
+
+        &__input{
+            border: 1px solid #DFDEE0;
+            border-radius: .8rem;
+            width: 100%;
+            height: 40%;
+            font-size: 1.8rem;
+            padding-left: .6em;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    }
+
+    &__number{
+        grid-area: num;
+        margin-bottom: -1em;
+        &__title{
+            font-size: 1.2rem;
+            margin-bottom: 1em;
+            letter-spacing: .2rem;
+            color: #21092F;
+            font-family: 'Space Grotesk', sans-serif;
+
+        }
+
+        &__input{
+            border: 1px solid #DFDEE0;
+            border-radius: .8rem;
+            width: 100%;
+            height: 40%;
+            font-size: 1.8rem;
+            padding-left: .6em;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    }
+
+    &__expc{
+        grid-area: expc;
+        
+        &__text{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            &__title{
+                font-size: 1.2rem;
+                margin-bottom: 1em;
+                letter-spacing: .2rem;
+                grid-column: 1;
+                color: #21092F;
+                font-family: 'Space Grotesk', sans-serif;
+            }
+
+            &__cvc{
+                font-size: 1.2rem;
+                margin-bottom: 1em;
+                letter-spacing: .2rem;
+                padding-left: 4em;
+                grid-column: 2;
+                color: #21092F;
+                font-family: 'Space Grotesk', sans-serif;
+            }
+        }
+        
+        &__container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 1em;
+            
+            &__month{
+                border: 1px solid #DFDEE0;
+                border-radius: .8rem;
+                width: 50%;
+                height: 40%;
+                font-size: 1.8rem;
+                padding-left: .6em;
+                font-family: 'Space Grotesk', sans-serif;
+                
+            }
+            &__year{
+                border: 1px solid #DFDEE0;
+                border-radius: .8rem;
+                width: 50%;
+                height: 40%;
+                font-size: 1.8rem;
+                padding-left: .6em;
+                font-family: 'Space Grotesk', sans-serif;
+            }
+            &__cv{
+                border: 1px solid #DFDEE0;
+                border-radius: .8rem;
+                width: 80%;
+                height: 40%;
+                font-size: 1.8rem;
+                padding-left: .6em;
+                font-family: 'Space Grotesk', sans-serif;
+            }
+
+            input:invalid + &__error-year{
+                display: block;
+                color: blueviolet;
+                font-size: 1.5rem;
+             
+            }
+            &__error-year{
+                display: none;
+            }
+
+            input:invalid + &__error-month{
+                display: block;
+                color: blueviolet;
+                font-size: 1.5rem;
+             
+            }
+            &__error-month{
+                display: none;
+            }
+
+            input:invalid + &__error-cvc{
+                display: block;
+                color: blueviolet;
+                font-size: 1.5rem;
+            }
+
+            &__error-cvc{
+                display: none;
+            }
+
+            
+            
+        }
+
+        
+    }
+
+    &__btn{
+        grid-area: btn;
+        cursor: pointer;
+        background-color: #21092F;
+        color: white;
+        font-size: 1.8rem;
+        width: 100%;
+        border-radius: .8rem;
+        border: none;
+        outline: none;
+        height: 65%;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    ::placeholder{
+        color: #21092F;
+        opacity: .25;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    input:focus{
+        outline: none;
+    }
+
+    
+    
+    span{
+        color: red;
+        display: none;
+    }
+
+    
+
+    input:invalid {
+        border: 1px solid red;
+        
+    }
+
+    input:invalid ~ span{
+        display: block;
+        font-size: 2rem;
+    }
+    
+    
+   
+
+
+}
+
+@media(max-width:1973px){
+    .shade{
+        grid-column: 1/6;
+    }
+    .cards{
+        grid-column: 3/7;
+        &__text-front{
+            grid-column: 2/-1;
+            grid-row: 1/2;
+            transform: translateX(5%);
+        }
+        &__text-back{
+            grid-column: 3/-1;
+            grid-row: 3/4; 
+            
+        }
+        &__front{
+            grid-column: 2/-1;
+            grid-row: 1/2;
+            transform: translateX(5%);
+        }
+    
+        &__back{
+            grid-column: 3/-1;
+            grid-row: 3/4; 
+        } 
+    }
+
+
+   
+}
+
+
+@media(max-width: 1177px){
+    .shade{
+        grid-column: 1/-1;
+        grid-row: 1/5;
+        height: 80%;
+        min-height: 280px;
+    }
+
+    .form{
+        grid-column: 1/-1;
+        grid-row: 5/-1;
+        width: 85%;
+        margin: 0 auto;
+        
+        margin-top: -3em;
+
+        &__expc{
+            &__text{
+                &__cvc{
+                    padding-left: 5.5em;
+                    width: 20%;
+                }
+            }
+        }
+    }
+
+    .cards{
+        grid-column: 1/-1;
+        grid-row: 4;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        &__text-front{
+            position: absolute;
+            width: 70%;
+            height: 48%;
+            transform: translate(0, -43.5%);
+            color: white;
+            display: grid;
+            grid-template-areas: 
+                'img img img img'
+                '.   .    .   . '
+                'num num  num num'
+                'name name exp exp'
+            ;
+    
+            &__img{
+                padding-left: 2.8em;
+                width: 60%;
+                margin-top: 2em;
+            }
+    
+            &__num{
+                font-size: 2.5rem;
+                padding-left: 1.2em;
+                margin-top: .8em;
+                grid-area: num;
+            }
+            
+            &__name{
+                font-size: 1.5rem;
+                grid-area: name;
+                padding-left: 2em;
+            }
+    
+            &__exp{
+                grid-area: exp;
+                font-size: 1.25rem;
+                margin-left: 3em;
+            }
+        }
+        &__text-back{
+        
+           
+            display: flex;
+            position: absolute;
+           
+            width: 70%;
+            height: 49.5%;
+            transform: translate(43%,-101.8%);
+            
+           
+            &__cvc{
+                color: white;
+                font-size: 1.5rem;
+                margin-right: 3em;
+                margin-bottom: .2em;
+            }
+        }
+        
+        &__front{
+            width: 70%;
+            transform: translateY(-43.5%);
+        }
+
+        &__back{
+            width: 70%;
+            align-self: flex-end;
+        }
+    }
+}
+
+
+@media(max-width: 356px){
+    .cards{
+        &__text-front{
+            position: absolute;
+           
+            width: 70%;
+            height: 48%;
+            transform: translate(0, -43.5%);
+            color: white;
+            display: grid;
+            grid-template-areas: 
+                'img img img img'
+                '.   .    .   . '
+                'num num  num num'
+                'name name exp exp'
+            ;
+    
+            &__img{
+                padding-left: 2.8em;
+                width: 60%;
+                margin-top: 2em;
+            }
+    
+            &__num{
+                font-size: 1.8rem;
+                margin-left: .5em;
+            }
+            
+            &__name{
+                font-size: 1.2rem;
+                margin-left: .7em;
+            }
+    
+            &__exp{
+                grid-area: exp;
+                font-size: 1.25rem;
+                margin-left: 1.5em;
+            }
+        }
+        &__text-back{
+            
+            &__cvc{
+                color: white;
+                font-size: 1.3rem;
+                margin-right: 2.8em;
+                margin-bottom: .2em;
+            }
+        }
+    }
+    
+
+}

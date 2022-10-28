@@ -1,0 +1,270 @@
+.cards{
+ 
+    grid-column: 5/9;
+    grid-row: 3/10;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+   
+    &__text-front{
+        font-family: 'Space Grotesk', sans-serif;
+        grid-column: 2/-1;
+        grid-row: 1/2;
+        width: 400px;
+        transform: translateX(20%);
+        color: white;
+        display: grid;
+        grid-template-areas: 
+            'img img img img'
+            '.   .    .   . '
+            'num num  num num'
+            'name name exp exp'
+        ;
+
+        &__img{
+            padding-left: 4.2em;
+            width: 80%;
+            margin-top: 2em;
+        }
+
+        &__num{
+            font-size: 3.2rem;
+            padding-left: 1em;
+            margin-top: .8em;
+            grid-area: num;
+        }
+        
+        &__name{
+            font-size: 1.64rem;
+            grid-area: name;
+            padding-left: 2em;
+        }
+
+        &__exp{
+            grid-area: exp;
+            font-size: 2rem;
+            margin-left: 3em;
+        }
+    }
+    &__text-back{
+        font-family: 'Space Grotesk', sans-serif;
+        z-index: 2;
+        width: 400px;
+        grid-column: 3/-1;
+        grid-row: 3/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        &__cvc{
+            color: white;
+            font-size: 2rem;
+            margin-right: 2.8em;
+            margin-bottom: .2em;
+        }
+    }
+    &__front{
+        
+        max-width: 400px;
+        grid-column: 2/-1;
+        grid-row: 1/2;
+        transform: translateX(20%);
+    }
+
+    &__back{
+        
+        max-width: 400px;
+        grid-column: 3/-1;
+        grid-row: 3/4;
+        z-index: 2;
+        
+    }
+}
+
+@media(max-width:1973px){
+    .shade{
+        grid-column: 1/6;
+    }
+    .cards{
+        grid-column: 3/7;
+        &__text-front{
+            grid-column: 2/-1;
+            grid-row: 1/2;
+            transform: translateX(5%);
+        }
+        &__text-back{
+            grid-column: 3/-1;
+            grid-row: 3/4; 
+            
+        }
+        &__front{
+            grid-column: 2/-1;
+            grid-row: 1/2;
+            transform: translateX(5%);
+        }
+    
+        &__back{
+            grid-column: 3/-1;
+            grid-row: 3/4; 
+        } 
+    }
+
+
+   
+}
+
+
+@media(max-width: 1177px){
+    .shade{
+        grid-column: 1/-1;
+        grid-row: 1/5;
+        height: 80%;
+        min-height: 280px;
+    }
+
+    .form{
+        grid-column: 1/-1;
+        grid-row: 5/-1;
+        width: 85%;
+        margin: 0 auto;
+        
+        margin-top: -3em;
+
+        &__expc{
+            &__text{
+                &__cvc{
+                    padding-left: 5.5em;
+                    width: 20%;
+                }
+            }
+        }
+    }
+
+    .cards{
+        grid-column: 1/-1;
+        grid-row: 4;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        &__text-front{
+            position: absolute;
+            width: 70%;
+            height: 48%;
+            transform: translate(0, -43.5%);
+            color: white;
+            display: grid;
+            grid-template-areas: 
+                'img img img img'
+                '.   .    .   . '
+                'num num  num num'
+                'name name exp exp'
+            ;
+    
+            &__img{
+                padding-left: 2.8em;
+                width: 60%;
+                margin-top: 2em;
+            }
+    
+            &__num{
+                font-size: 2.2rem;
+                padding-left: 1.2em;
+                margin-top: .8em;
+                grid-area: num;
+            }
+            
+            &__name{
+                font-size: 1.2rem;
+                grid-area: name;
+                padding-left: 2em;
+            }
+    
+            &__exp{
+                grid-area: exp;
+                font-size: 1.25rem;
+                margin-left: 2em;
+            }
+        }
+        &__text-back{
+        
+           
+            display: flex;
+            position: absolute;
+           
+            width: 70%;
+            height: 49.5%;
+            transform: translate(43%,-101.8%);
+            
+           
+            &__cvc{
+                color: white;
+                font-size: 1.5rem;
+                margin-right: 3em;
+                margin-bottom: .2em;
+            }
+        }
+        
+        &__front{
+            width: 70%;
+            transform: translateY(-43.5%);
+        }
+
+        &__back{
+            width: 70%;
+            align-self: flex-end;
+        }
+    }
+}
+
+
+@media(max-width: 356px){
+    .cards{
+        &__text-front{
+            position: absolute;
+           
+            width: 70%;
+            height: 48%;
+            transform: translate(0, -43.5%);
+            color: white;
+            display: grid;
+            grid-template-areas: 
+                'img img img img'
+                '.   .    .   . '
+                'num num  num num'
+                'name name exp exp'
+            ;
+    
+            &__img{
+                padding-left: 2.8em;
+                width: 60%;
+                margin-top: 2em;
+            }
+    
+            &__num{
+                padding-left: 2em;
+                font-size: 1.5rem;
+                margin-left: .5em;
+            }
+            
+            &__name{
+                font-size: .9rem;
+                margin-left: .7em;
+            }
+    
+            &__exp{
+                grid-area: exp;
+                font-size: 1.25rem;
+                margin-left: 1.5em;
+            }
+        }
+        &__text-back{
+            
+            &__cvc{
+                color: white;
+                font-size: 1.3rem;
+                margin-right: 2.8em;
+                margin-bottom: .2em;
+            }
+        }
+    }
+}
